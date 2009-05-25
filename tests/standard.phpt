@@ -87,11 +87,11 @@ EXCEPTION -1: The consumer secret cannot be empty
 NULL
 -- normal constructor --
 object(OAuth)#1 (3) {
-  ["debugInfo"]=>
+%s"debugInfo"]=>
   NULL
-  ["debug"]=>
+%s"debug"]=>
   bool(false)
-  ["sslChecks"]=>
+%s"sslChecks"]=>
   bool(false)
 }
 -- enable debug --

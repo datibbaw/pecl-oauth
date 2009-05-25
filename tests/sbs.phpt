@@ -30,7 +30,7 @@ GET&http%3A%2F%2F127.0.0.1%3A12342%2F&
 GET&http%3A%2F%2F127.0.0.1%3A12342%2F&
 -- using string instead of array --
 
-Warning: oauth_get_sbs() expects parameter 3 to be array, string given in %s
+Warning: oauth_get_sbs() expects parameter 3 to be array,%sstring given in %s
 
 -- using numeric keys masked as a string --
 GET&http%3A%2F%2F127.0.0.1%3A12342%2F&1%3Dhello

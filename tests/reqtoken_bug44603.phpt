@@ -1,7 +1,13 @@
 --TEST--
 OAuth getRequestToken
 --SKIPIF--
-<?php require 'server.inc'; http_server_skipif('tcp://127.0.0.1:12342'); ?>
+<?php 
+require 'skip.inc';
+skip_if_not_php_major(5);
+skip_without_bug('44603');
+require 'server.inc';
+http_server_skipif('tcp://127.0.0.1:12342');
+?>
 --FILE--
 <?php
 require 'server.inc';
@@ -50,13 +56,13 @@ array(2) {
   string(4) "4567"
 }
 string(%d) "GET /test HTTP/%f
-Host: 127.0.0.1:12342
 Authorization: OAuth oauth_consumer_key="1234",oauth_signature_method="HMAC-SHA1",oauth_nonce="%s.%d",oauth_timestamp="%d",oauth_version="1.0",oauth_signature="%s"
+Host: 127.0.0.1:12342
 
 POST /test HTTP/%f
+Content-Type: application/x-www-form-urlencoded
 Host: 127.0.0.1:12342
 Content-Length: %d
-Content-Type: application/x-www-form-urlencoded
 
 oauth_consumer_key=1234&oauth_signature_method=HMAC-SHA1&oauth_nonce=%s.%d&oauth_timestamp=%d&oauth_version=1.0&oauth_signature=%s
 GET /test?oauth_consumer_key=1234&oauth_signature_method=HMAC-SHA1&oauth_nonce=%s.%d&oauth_timestamp=%d&oauth_version=1.0&oauth_signature=%s HTTP/%f
