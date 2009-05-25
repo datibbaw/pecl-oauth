@@ -1,0 +1,28 @@
+*.l[oa]
+config.*
+Makefile*
+configure*
+acinclude.m4
+aclocal.m4
+missing
+mkinstalldirs
+install-sh
+ltmain.sh
+libtool
+
+# temporary folders
+autom4te.cache
+build
+modules
+.deps
+.libs
+
+# test case temp files
+tests/*
+!*.inc
+!*.phpt
+run-tests.php
+
+# create by KDevelop
+Doxyfile
+*.kdevelop*
