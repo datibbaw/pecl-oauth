@@ -1,3 +1,4 @@
+*~
 *.l[oa]
 config.*
 Makefile*
@@ -26,3 +27,4 @@ run-tests.php
 # create by KDevelop
 Doxyfile
 *.kdevelop*
+*.kdevses

@@ -14,6 +14,13 @@ function skip_if_not_php_major($version)
 	}
 }
 
+function skip_of_not_at_least_php_major($version)
+{
+	if (PHP_MAJOR_VERSION<$version) {
+		die("skip Only from PHP $version onwards");
+	}
+}
+
 function skip_if_php_major($version)
 {
 	if (PHP_MAJOR_VERSION==$version) {

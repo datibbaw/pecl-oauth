@@ -849,7 +849,6 @@ static long make_req_streams(php_so_object *soo, const char *url, const smart_st
 			} else {
 				first = 0;
 			}
-			smart_str_0(&sheaderline);
 			smart_str_append(&sheaders, &sheaderline);
 			smart_str_free(&sheaderline);
 		}
@@ -860,8 +859,8 @@ static long make_req_streams(php_so_object *soo, const char *url, const smart_st
 			}
 			smart_str_appends(&sheaders, "Content-Type: application/x-www-form-urlencoded");
 		}
-		smart_str_0(&sheaders);
 		if (sheaders.len) {
+			smart_str_0(&sheaders);
 			ZVAL_STRINGL(&zheaders, sheaders.c, sheaders.len, 0);
 			php_stream_context_set_option(sc, "http", "header", &zheaders);
 			if (soo->debug) {
